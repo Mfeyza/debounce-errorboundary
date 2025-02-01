@@ -1,0 +1,37 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Delius&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:  "Delius", serif;
+  
+  
+}
+body {
+  font-family: "Delius", serif;
+  background-color: #D9AFD9;
+
+
+}
+
+
+
+.news::-webkit-scrollbar{
+  
+width: 5px;
+}
+.marvelBox{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 3rem;
+  overflow: auto;
+  height: 80vh;
+}
+
+.marvelContainer::-webkit-scrollbar{
+ width: 2px;
+}
