@@ -45,7 +45,7 @@ console.log(query)
       sx={{
         background: "linear-gradient(90deg, #1E3A8A, #9333EA)",
         height: "80vh",
-        padding: "5px",
+        padding: "40px",
       }}
     >
       <Grid

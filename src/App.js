@@ -2,7 +2,7 @@ import { Grid2 } from "@mui/material";
 import "./App.css";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
-import Marvel from "./components/Marvel";
+import Marvel from "./components/Book";
 import News from "./components/News";
 import Weather from "./components/Weather";
 

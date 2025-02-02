@@ -45,7 +45,7 @@ const News = () => {
       sx={{
         background: "linear-gradient(90deg, #1E3A8A, #9333EA)",
         height: "80vh",
-        padding: "40px 20px",
+        padding: "40px",
          overflow:"auto"
           
       }}
@@ -56,6 +56,7 @@ const News = () => {
         justifyContent="space-between"
         sx={{
           flexWrap: "wrap",
+          
           
         
         
@@ -71,6 +72,8 @@ const News = () => {
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
+                
+               
               }}
             >
               <CircularProgress size="150px" sx={{ color: "#9333EA" }} />
@@ -85,7 +88,8 @@ const News = () => {
                   width: "100%",
                   maxWidth: "400px",
                   background: "white",
-                  margin: "20px auto",
+                  margin: "10px auto",
+                  
                 }}
               >
                  <CardMedia

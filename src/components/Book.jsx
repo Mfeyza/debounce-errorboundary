@@ -13,17 +13,20 @@ import {
 } from "@mui/material";
 
 const Marvel = () => {
-  const [query, setQuery] = useState("Iron Man");
-  const [character, setCharacter] = useState(null);
+  const [query, setQuery] = useState("gogol");
+  const [book, setBook] = useState(null);
   const [loading, setLoading] = useState(false);
+  
 
-  const getMarvelCharacter = async () => {
+  const getBook = async () => {
+    const apiKey = process.env.REACT_APP_BOOK_KEY;
     setLoading(true);
     try {
       const response = await axios.get(
-        `https://gateway.marvel.com/v1/public/characters?apikey=${process.env.REACT_APP_MARVEL_KEY}&nameStartsWith=${query}`
+        `https://www.googleapis.com/books/v1/volumes?q=${query}&key=${apiKey}&maxResults=40`
       );
-      setCharacter(response.data.data.results);
+      setBook(response.data.items);
+      console.log(book)
     } catch (error) {
       console.error("API isteği başarısız:", error);
     } finally {
@@ -36,16 +39,16 @@ const Marvel = () => {
   };
 
   useEffect(() => {
-    getMarvelCharacter();
+    getBook();
   }, [query]);
- console.log(character)
+ console.log(book)
   return (
     <Container
     className="marvelContainer"
       sx={{
         background: "linear-gradient(90deg, #1E3A8A, #9333EA)",
         height: "80vh",
-        padding: "5px",
+        padding: "40px 20px",
         overflow:"auto",
      
       }}
@@ -75,10 +78,10 @@ const Marvel = () => {
               color="primary"
               sx={{ marginBottom: "20px", fontWeight: "bold" }}
             >
-              Marvel Karakter Arama
+              Kitap Arama
             </Typography>
             <TextField
-              label="Karakter adı girin..."
+              label="Kitap ismi girin..."
               variant="outlined"
               value={query}
               onChange={handleInputChange}
@@ -101,8 +104,8 @@ const Marvel = () => {
     >
       <CircularProgress size="150px" sx={{ color: "#9333EA" }} />
     </Box>
-  ) : character && character.length > 0 ? (
-    character.map((char) => (
+  ) : book && book.length > 0 ? (
+    book.map((char) => (
       <Card
         key={char.id}
         sx={{
@@ -118,8 +121,7 @@ const Marvel = () => {
         <CardMedia
           component="img"
           height="100"
-          image={`${char.thumbnail.path}.${char.thumbnail.extension}`}
-          alt={char.name}
+          image={char.volumeInfo?.imageLinks?.thumbnail ||char.volumeInfo?.imageLinks?.smallThumbnail }
           sx={{
             borderTopLeftRadius: "15px",
             borderTopRightRadius: "15px",
@@ -132,19 +134,19 @@ const Marvel = () => {
             component="div"
             sx={{ fontWeight: "bold", textAlign: "center" }}
           >
-            {char.name}
+            {char.volumeInfo.title}
           </Typography>
         </CardContent>
       </Card>
     ))
   ) : (
     <Typography sx={{ textAlign: "center", color: "white" }}>
-      Karakter bulunamadı
+      Kitap  bulunamadı
     </Typography>
   )}
           </Box>
  
-</Grid>
+</Grid> 
 
       </Grid>
     </Container>
