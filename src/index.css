@@ -2,23 +2,46 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Delius&display=swap');
 
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family:  "Delius", serif;
-  
+
   
 }
 body {
-  font-family: "Delius", serif;
-  background-color: #D9AFD9;
-
+  font-family: "Delius", cursive;
+ 
+  ;
 
 }
 
+.delius-regular {
+  font-family: "Delius", serif;
+  font-weight: 400;
+  font-style: normal;
+}
 
+.App{
+  background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898;
+ background-blend-mode: multiply,multiply !important;
+}
 
+.MuiToolbar-root{
+  
+    background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898;
+   
+
+}
+.inputText{
+  font-family: "Delius", cursive;
+}
+.search{
+ background-color: transparent;
+ border: none;
+}    
 .news::-webkit-scrollbar{
   
 width: 5px;

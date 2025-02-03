@@ -20,7 +20,11 @@ const Weather = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(query)}&lang=tr&units=metric&appid=${process.env.REACT_APP_WEATHER_API_KEY}&units=metric&lang=tr`
+        `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(
+          query
+        )}&lang=tr&units=metric&appid=${
+          process.env.REACT_APP_WEATHER_API_KEY
+        }&units=metric&lang=tr`
       );
       setWeather(response.data);
     } catch (error) {
@@ -29,21 +33,19 @@ const Weather = () => {
       setLoading(false);
     }
   };
-console.log(query)
+
   const handleInputChange = (e) => {
     setQuery(e.target.value);
   };
 
   useEffect(() => {
     fetchWeatherData();
-    
-  }, [query])
-  
+  }, [query]);
 
   return (
     <Container
       sx={{
-        background: "linear-gradient(90deg, #1E3A8A, #9333EA)",
+      
         height: "80vh",
         padding: "40px",
       }}
@@ -58,20 +60,18 @@ console.log(query)
       >
         <Grid item xs={12} md={12}>
           <Box
+           className="search"
             sx={{
               display: "flex",
               flexDirection: "column",
               justifyContent: "center",
               padding: "20px",
-              background: "rgba(255, 255, 255, 0.8)",
-              borderRadius: "15px",
-              boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
             }}
           >
             <Typography
+            className="inputText"
               variant="h4"
-              color="primary"
-              sx={{ marginBottom: "20px", fontWeight: "bold" }}
+              sx={{ marginBottom: "20px" }}
             >
               Hava Durumu
             </Typography>

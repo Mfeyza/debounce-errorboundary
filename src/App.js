@@ -2,7 +2,7 @@ import { Grid2 } from "@mui/material";
 import "./App.css";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
-import Marvel from "./components/Book";
+import Book from "./components/Book";
 import News from "./components/News";
 import Weather from "./components/Weather";
 
@@ -17,9 +17,12 @@ function App() {
         <Grid2 size={4}>
           <Weather />
         </Grid2>
-        <Grid2 size={4}>
-          <Marvel />
+   
+     <Grid2 size={4}>
+          <Book />
         </Grid2>
+     
+      
         <Grid2 size={4}>
           <News />
         </Grid2>

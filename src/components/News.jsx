@@ -13,7 +13,7 @@ import {
 } from "@mui/material";
 
 const News = () => {
-  const [query, setQuery] = useState("izmir");
+  const [query, setQuery] = useState("Ankara");
   const [news, setNews] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -43,7 +43,7 @@ const News = () => {
     <Container
     className="news"
       sx={{
-        background: "linear-gradient(90deg, #1E3A8A, #9333EA)",
+     
         height: "80vh",
         padding: "40px",
          overflow:"auto"

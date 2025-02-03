@@ -27,9 +27,10 @@ const Navbar = () => {
   return (
     <>
       <AppBar
+      className="nav"
         position="static"
         sx={{
-          background: "linear-gradient(90deg, #1E3A8A, #9333EA)",
+        
           boxShadow: "0px 4px 10px rgba(0,0,0,0.2)",
         }}
       >
